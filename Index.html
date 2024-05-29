@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>권익상의 자기소개</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff; /* 흰색 배경 */
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8); /* 약간 불투명한 흰색 배경 */
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      animation: slideUp 1s ease forwards; /* 올라오는 애니메이션 */
+      opacity: 0; /* 초기에는 투명하게 */
+      transform: translateY(100%); /* 초기에는 아래에 위치 */
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #infoContainer {
+      margin-top: 30px;
+      text-align: left;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>권익상의 자기소개</h1>
+    <button id="nameBtn">내 이름</button>
+    <button id="infoBtn">추가 정보</button>
+    <div id="infoContainer"></div>
+  </div>
+  <script>
+    window.onload = function() {
+      const container = document.querySelector('.container');
+      container.style.opacity = '1'; // 페이지 로드 시 컨테이너가 나타나도록 설정
+    };
+
+    const nameBtn = document.getElementById('nameBtn');
+    const infoBtn = document.getElementById('infoBtn');
+    const infoContainer = document.getElementById('infoContainer');
+
+    const nameInfo = "저의 이름은 권익상입니다.";
+    const additionalInfo = "고촌고등학교 1학년이며,부모님이 프로그래머이셔서 저 또한 코딩에 자연스래 관심을 가지게 되었습니다. 중학생 때는 3D모델링과 텍스처링을 배우며 3D게임을 만들어보고 싶다는 꿈을 키워가며, 기초지식을 쌓아갔습니다. 현재는 고딕이라는 동아리에서 3D게임 개발을 진행하고  있습니다.";
+
+    nameBtn.addEventListener('click', () => {
+      infoContainer.style.display = 'block';
+      infoContainer.textContent = nameInfo;
+    });
+
+    infoBtn.addEventListener('click', () => {
+      infoContainer.style.display = 'block';
+      infoContainer.textContent = additionalInfo;
+    });
+  </script>
+</body>
+</html>
